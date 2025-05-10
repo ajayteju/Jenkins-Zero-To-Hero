@@ -5,7 +5,8 @@ pipeline {
       //args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
       //image 'cibuilds/maven:3.6.3'
       image 'ajaychaudhari/maven-docker-agent-ajay:v1'
-      args '-v /root/.m2:/root/.m2'
+      //args '-v /root/.m2:/root/.m2'
+      args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
     }
   }
   stages {
