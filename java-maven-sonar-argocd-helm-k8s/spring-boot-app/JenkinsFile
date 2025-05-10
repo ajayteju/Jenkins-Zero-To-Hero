@@ -57,7 +57,7 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 script {
-                    dir(env.WORKSPACE) {
+                    dir('Jenkins-Zero-To-Hero') {
                     //sh 'git clone https://github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git'
                         sh 'ls -la'
                         sh '''
