@@ -58,7 +58,6 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 script {
                     sh 'git clone https://github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git'
-                    dir('java-maven-sonar-argocd-helm-k8s/spring-boot-app') {
                         sh 'ls -la'
                         sh '''
                             git config user.email "ajay.chaudhari007@gmail.com"
@@ -69,7 +68,7 @@ pipeline {
                             git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                             git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
                         '''
-                    }
+                    
                 }
             }
         }
