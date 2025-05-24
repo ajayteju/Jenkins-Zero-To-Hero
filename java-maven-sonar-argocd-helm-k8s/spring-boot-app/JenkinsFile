@@ -6,7 +6,9 @@ pipeline {
       //image 'cibuilds/maven:3.6.3'
       image 'ajaychaudhari/maven-docker-agent-ajay:v1'
       //args '-v /root/.m2:/root/.m2'
-      args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
+      //args '-v /var/run/docker.sock:/var/run/docker.sock -u root'
+      args '-v /var/run/docker.sock:/var/run/docker.sock -v $HOME/.gitconfig:/root/.gitconfig -u root'
+
     }
   }
   stages {
