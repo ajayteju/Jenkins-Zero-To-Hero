@@ -57,8 +57,9 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 script {
-                    //dir('Jenkins-Zero-To-Hero') {
-                        //sh 'git clone https://github.com/ajayteju/Jenkins-Zero-To-Hero'
+                    sh 'git clone https://github.com/ajayteju/Jenkins-Zero-To-Hero.git'
+                    dir('Jenkins-Zero-To-Hero') {
+                        //sh 'git clone https://github.com/ajayteju/Jenkins-Zero-To-Hero.git'
                         //sh 'cd Jenkins-Zero-To-Hero/Jenkins-Zero-To-Hero'
                         sh 'ls -la'
                         sh 'pwd'
@@ -74,7 +75,7 @@ pipeline {
                             git diff --staged --quiet || git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                             git push https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main                           
                         '''
-                  //}
+                    }
                 }
             }
         }
