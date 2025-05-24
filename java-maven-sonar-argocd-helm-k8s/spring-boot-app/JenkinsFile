@@ -58,8 +58,8 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 script {
                     dir('Jenkins-Zero-To-Hero') {
-                        sh 'git clone https://github.com/ajayteju/Jenkins-Zero-To-Hero'
-                        sh 'cd Jenkins-Zero-To-Hero'
+                        //sh 'git clone https://github.com/ajayteju/Jenkins-Zero-To-Hero'
+                        //sh 'cd Jenkins-Zero-To-Hero'
                         sh 'ls -la'
                         sh 'pwd'
                         sh '''
