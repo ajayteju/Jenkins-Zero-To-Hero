@@ -65,7 +65,7 @@ pipeline {
                         //sh 'cd Jenkins-Zero-To-Hero/Jenkins-Zero-To-Hero'
                         sh 'ls -la'
                         sh 'which git && git --version'
-                        sh 'git rev-parse --is-inside-work-tree'
+                        //sh 'git rev-parse --is-inside-work-tree'
                         sh 'pwd'
                         sh '''
                             git config --global --add safe.directory "$(pwd)"
