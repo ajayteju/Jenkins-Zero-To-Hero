@@ -64,6 +64,7 @@ pipeline {
                         //sh 'git clone https://github.com/ajayteju/Jenkins-Zero-To-Hero.git'
                         //sh 'cd Jenkins-Zero-To-Hero/Jenkins-Zero-To-Hero'
                         sh 'ls -la'
+                        sh 'which git && git --version'
                         sh 'pwd'
                         sh '''
                             git config user.email "ajay.chaudhari007@gmail.com"
